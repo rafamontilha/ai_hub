@@ -1,0 +1,911 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-07-30",
+    "disclaimer": "Preço e contexto são AUTOMATIZADOS via OpenRouter API (ver priceSource/priceVerified). Scores/ELO são CURADOS e ilustrativos no protótipo (ver source/lastVerified) — verifique antes de usar em decisão real. Scores normalizados 0-100.",
+    "scoreAxes": [
+      "reasoning",
+      "code",
+      "knowledge",
+      "speed",
+      "cost"
+    ],
+    "sources": {
+      "pricing": "OpenRouter API (auto, 2026-07-30)",
+      "quality": "Curadoria interna (Artificial Analysis / papers / cards oficiais)",
+      "elo": "LMSYS Chatbot Arena (curado manualmente)"
+    }
+  },
+  "categories": [
+    {
+      "id": "all",
+      "label": "Todos"
+    },
+    {
+      "id": "reasoning",
+      "label": "Raciocínio Avançado"
+    },
+    {
+      "id": "code",
+      "label": "Geração de Código"
+    },
+    {
+      "id": "rag",
+      "label": "RAG & Contexto Extenso"
+    },
+    {
+      "id": "multimodal",
+      "label": "Visão / Multimodal"
+    },
+    {
+      "id": "open",
+      "label": "Open-Source / On-Premise"
+    },
+    {
+      "id": "value",
+      "label": "Baixo Custo & Alta Velocidade"
+    }
+  ],
+  "models": [
+    {
+      "id": "claude-opus-4-8",
+      "name": "Claude Opus 4.8",
+      "provider": "Anthropic",
+      "logo": "◆",
+      "badge": "High Reasoning",
+      "categories": [
+        "reasoning",
+        "code",
+        "rag",
+        "multimodal"
+      ],
+      "license": "proprietary",
+      "context": 1000000,
+      "price": {
+        "input": 5,
+        "output": 25
+      },
+      "latencyTtftMs": 900,
+      "throughputTps": 65,
+      "elo": 1358,
+      "scores": {
+        "reasoning": 98,
+        "code": 96,
+        "knowledge": 95,
+        "speed": 55,
+        "cost": 25
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Zero-retention disponível (Enterprise)",
+        "regions": "US, EU",
+        "dataResidency": "US, EU (selecionável no Enterprise)",
+        "certifications": [
+          "SOC 2 Type II",
+          "ISO 27001",
+          "HIPAA (BAA)",
+          "GDPR"
+        ],
+        "dpa": true,
+        "zeroRetention": true,
+        "selfHost": false
+      },
+      "notes": "Topo de raciocínio e agentes de código. Custo alto — reservar para tarefas difíceis.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-28",
+      "openrouterId": "anthropic/claude-opus-4.8",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "anthropic"
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "name": "Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "logo": "◆",
+      "badge": "Best Value",
+      "categories": [
+        "reasoning",
+        "code",
+        "rag",
+        "multimodal",
+        "value"
+      ],
+      "license": "proprietary",
+      "context": 1000000,
+      "price": {
+        "input": 3,
+        "output": 15
+      },
+      "latencyTtftMs": 500,
+      "throughputTps": 95,
+      "elo": 1322,
+      "scores": {
+        "reasoning": 92,
+        "code": 93,
+        "knowledge": 90,
+        "speed": 78,
+        "cost": 62
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Zero-retention disponível (Enterprise)",
+        "regions": "US, EU",
+        "dataResidency": "US, EU (selecionável no Enterprise)",
+        "certifications": [
+          "SOC 2 Type II",
+          "ISO 27001",
+          "HIPAA (BAA)",
+          "GDPR"
+        ],
+        "dpa": true,
+        "zeroRetention": true,
+        "selfHost": false
+      },
+      "notes": "Melhor relação qualidade/preço para produção. Default recomendado para a maioria dos casos.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-28",
+      "openrouterId": "anthropic/claude-sonnet-4.6",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "anthropic"
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "name": "Claude Haiku 4.5",
+      "provider": "Anthropic",
+      "logo": "◆",
+      "badge": "Speed Champion",
+      "categories": [
+        "code",
+        "value",
+        "multimodal"
+      ],
+      "license": "proprietary",
+      "context": 200000,
+      "price": {
+        "input": 1,
+        "output": 5
+      },
+      "latencyTtftMs": 280,
+      "throughputTps": 140,
+      "elo": 1268,
+      "scores": {
+        "reasoning": 82,
+        "code": 85,
+        "knowledge": 82,
+        "speed": 94,
+        "cost": 82
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Zero-retention disponível (Enterprise)",
+        "regions": "US, EU",
+        "dataResidency": "US, EU (selecionável no Enterprise)",
+        "certifications": [
+          "SOC 2 Type II",
+          "ISO 27001",
+          "HIPAA (BAA)",
+          "GDPR"
+        ],
+        "dpa": true,
+        "zeroRetention": true,
+        "selfHost": false
+      },
+      "notes": "Baixa latência para chatbots em tempo real e alto volume.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-28",
+      "openrouterId": "anthropic/claude-haiku-4.5",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "anthropic"
+    },
+    {
+      "id": "gpt-5-1",
+      "name": "GPT-5.1",
+      "provider": "OpenAI",
+      "logo": "✳",
+      "badge": "Market Leader",
+      "categories": [
+        "reasoning",
+        "code",
+        "rag",
+        "multimodal"
+      ],
+      "license": "proprietary",
+      "context": 400000,
+      "price": {
+        "input": 1.25,
+        "output": 10
+      },
+      "latencyTtftMs": 700,
+      "throughputTps": 80,
+      "elo": 1352,
+      "scores": {
+        "reasoning": 97,
+        "code": 95,
+        "knowledge": 96,
+        "speed": 62,
+        "cost": 35
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "30 dias (padrão API); zero via ZDR",
+        "regions": "US, EU",
+        "dataResidency": "US, EU (data residency no Enterprise)",
+        "certifications": [
+          "SOC 2 Type II",
+          "CSA STAR",
+          "HIPAA (BAA)",
+          "GDPR",
+          "CCPA"
+        ],
+        "dpa": true,
+        "zeroRetention": true,
+        "selfHost": false
+      },
+      "notes": "Generalista forte e multimodal com contexto amplo.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-25",
+      "openrouterId": "openai/gpt-5.1",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "openai"
+    },
+    {
+      "id": "gpt-5-mini",
+      "name": "GPT-5 mini",
+      "provider": "OpenAI",
+      "logo": "✳",
+      "badge": "Best Value",
+      "categories": [
+        "code",
+        "value",
+        "rag",
+        "multimodal"
+      ],
+      "license": "proprietary",
+      "context": 400000,
+      "price": {
+        "input": 0.25,
+        "output": 2
+      },
+      "latencyTtftMs": 320,
+      "throughputTps": 130,
+      "elo": 1275,
+      "scores": {
+        "reasoning": 84,
+        "code": 86,
+        "knowledge": 85,
+        "speed": 90,
+        "cost": 88
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "30 dias (padrão API); zero via ZDR",
+        "regions": "US, EU",
+        "dataResidency": "US, EU (data residency no Enterprise)",
+        "certifications": [
+          "SOC 2 Type II",
+          "CSA STAR",
+          "HIPAA (BAA)",
+          "GDPR",
+          "CCPA"
+        ],
+        "dpa": true,
+        "zeroRetention": true,
+        "selfHost": false
+      },
+      "notes": "Ótimo custo-benefício para tarefas de médio porte e alto volume.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-25",
+      "openrouterId": "openai/gpt-5-mini",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "openai"
+    },
+    {
+      "id": "gemini-2-5-pro",
+      "name": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "logo": "◈",
+      "badge": "High Reasoning",
+      "categories": [
+        "reasoning",
+        "rag",
+        "multimodal",
+        "code"
+      ],
+      "license": "proprietary",
+      "context": 1048576,
+      "price": {
+        "input": 1.25,
+        "output": 10
+      },
+      "latencyTtftMs": 650,
+      "throughputTps": 90,
+      "elo": 1340,
+      "scores": {
+        "reasoning": 95,
+        "code": 91,
+        "knowledge": 94,
+        "speed": 70,
+        "cost": 58
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Configurável (Vertex AI)",
+        "regions": "Global (Vertex regions)",
+        "dataResidency": "Global (regiões do Vertex AI)",
+        "certifications": [
+          "SOC 1/2/3",
+          "ISO 27001/27017/27018",
+          "HIPAA",
+          "GDPR"
+        ],
+        "dpa": true,
+        "zeroRetention": "configurável",
+        "selfHost": false
+      },
+      "notes": "Contexto de 1M tokens — líder para documentos extensos e RAG pesado.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-26",
+      "openrouterId": "google/gemini-2.5-pro",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "google"
+    },
+    {
+      "id": "gemini-2-5-flash",
+      "name": "Gemini 2.5 Flash",
+      "provider": "Google",
+      "logo": "◈",
+      "badge": "Speed Champion",
+      "categories": [
+        "value",
+        "rag",
+        "multimodal"
+      ],
+      "license": "proprietary",
+      "context": 1048576,
+      "price": {
+        "input": 0.3,
+        "output": 2.5
+      },
+      "latencyTtftMs": 250,
+      "throughputTps": 160,
+      "elo": 1262,
+      "scores": {
+        "reasoning": 80,
+        "code": 82,
+        "knowledge": 84,
+        "speed": 96,
+        "cost": 90
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Configurável (Vertex AI)",
+        "regions": "Global (Vertex regions)",
+        "dataResidency": "Global (regiões do Vertex AI)",
+        "certifications": [
+          "SOC 1/2/3",
+          "ISO 27001/27017/27018",
+          "HIPAA",
+          "GDPR"
+        ],
+        "dpa": true,
+        "zeroRetention": "configurável",
+        "selfHost": false
+      },
+      "notes": "Contexto gigante + baixo custo. Ideal para RAG barato em escala.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-26",
+      "openrouterId": "google/gemini-2.5-flash",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "google"
+    },
+    {
+      "id": "deepseek-r1",
+      "name": "DeepSeek R1",
+      "provider": "DeepSeek",
+      "logo": "▲",
+      "badge": "High Reasoning",
+      "categories": [
+        "reasoning",
+        "code",
+        "open"
+      ],
+      "license": "open",
+      "context": 163840,
+      "price": {
+        "input": 0.7,
+        "output": 2.5
+      },
+      "latencyTtftMs": 800,
+      "throughputTps": 60,
+      "elo": 1310,
+      "scores": {
+        "reasoning": 93,
+        "code": 90,
+        "knowledge": 86,
+        "speed": 58,
+        "cost": 85
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Self-host = total controle",
+        "regions": "On-premise / qualquer",
+        "dataResidency": "On-premise / qualquer nuvem",
+        "certifications": [
+          "Depende do seu ambiente (self-host)"
+        ],
+        "dpa": false,
+        "zeroRetention": "total (self-host)",
+        "selfHost": true
+      },
+      "notes": "Raciocínio forte, pesos abertos (MIT). Ótimo para on-premise sensível a privacidade.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-20",
+      "openrouterId": "deepseek/deepseek-r1",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "open"
+    },
+    {
+      "id": "deepseek-v3",
+      "name": "DeepSeek V3",
+      "provider": "DeepSeek",
+      "logo": "▲",
+      "badge": "Best Value",
+      "categories": [
+        "code",
+        "value",
+        "open",
+        "rag"
+      ],
+      "license": "open",
+      "context": 163840,
+      "price": {
+        "input": 0.27,
+        "output": 1.12
+      },
+      "latencyTtftMs": 450,
+      "throughputTps": 110,
+      "elo": 1285,
+      "scores": {
+        "reasoning": 86,
+        "code": 89,
+        "knowledge": 85,
+        "speed": 84,
+        "cost": 92
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Self-host = total controle",
+        "regions": "On-premise / qualquer",
+        "dataResidency": "On-premise / qualquer nuvem",
+        "certifications": [
+          "Depende do seu ambiente (self-host)"
+        ],
+        "dpa": false,
+        "zeroRetention": "total (self-host)",
+        "selfHost": true
+      },
+      "notes": "Generalista aberto muito barato. Bom default open-source.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-20",
+      "openrouterId": "deepseek/deepseek-chat-v3-0324",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "open"
+    },
+    {
+      "id": "llama-4-maverick",
+      "name": "Llama 4 Maverick",
+      "provider": "Meta",
+      "logo": "∞",
+      "badge": "Open Leader",
+      "categories": [
+        "open",
+        "code",
+        "rag",
+        "multimodal",
+        "value"
+      ],
+      "license": "open",
+      "context": 1048576,
+      "price": {
+        "input": 0.2,
+        "output": 0.8
+      },
+      "latencyTtftMs": 400,
+      "throughputTps": 120,
+      "elo": 1290,
+      "scores": {
+        "reasoning": 87,
+        "code": 88,
+        "knowledge": 87,
+        "speed": 85,
+        "cost": 89
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Self-host = total controle",
+        "regions": "On-premise / qualquer",
+        "dataResidency": "On-premise / qualquer nuvem",
+        "certifications": [
+          "Depende do seu ambiente (self-host)"
+        ],
+        "dpa": false,
+        "zeroRetention": "total (self-host)",
+        "selfHost": true
+      },
+      "notes": "Pesos abertos, multimodal e contexto longo. Forte para auto-hospedagem.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-18",
+      "openrouterId": "meta-llama/llama-4-maverick",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "open"
+    },
+    {
+      "id": "llama-4-scout",
+      "name": "Llama 4 Scout",
+      "provider": "Meta",
+      "logo": "∞",
+      "badge": "Speed Champion",
+      "categories": [
+        "open",
+        "value",
+        "rag"
+      ],
+      "license": "open",
+      "context": 1310720,
+      "price": {
+        "input": 0.1,
+        "output": 0.3
+      },
+      "latencyTtftMs": 260,
+      "throughputTps": 150,
+      "elo": 1240,
+      "scores": {
+        "reasoning": 78,
+        "code": 80,
+        "knowledge": 80,
+        "speed": 95,
+        "cost": 96
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Self-host = total controle",
+        "regions": "On-premise / qualquer",
+        "dataResidency": "On-premise / qualquer nuvem",
+        "certifications": [
+          "Depende do seu ambiente (self-host)"
+        ],
+        "dpa": false,
+        "zeroRetention": "total (self-host)",
+        "selfHost": true
+      },
+      "notes": "Menor e rápido, roda em GPU única. Barato para alto volume on-premise.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-18",
+      "openrouterId": "meta-llama/llama-4-scout",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "open"
+    },
+    {
+      "id": "mistral-large-3",
+      "name": "Mistral Large 3",
+      "provider": "Mistral",
+      "logo": "❖",
+      "badge": "EU / Compliance",
+      "categories": [
+        "code",
+        "reasoning",
+        "rag",
+        "open"
+      ],
+      "license": "open",
+      "context": 128000,
+      "price": {
+        "input": 2,
+        "output": 6
+      },
+      "latencyTtftMs": 480,
+      "throughputTps": 100,
+      "elo": 1295,
+      "scores": {
+        "reasoning": 88,
+        "code": 89,
+        "knowledge": 87,
+        "speed": 82,
+        "cost": 70
+      },
+      "governance": {
+        "trainsOnData": false,
+        "retention": "Configurável; hospedagem EU",
+        "regions": "EU (soberania de dados)",
+        "dataResidency": "EU (soberania de dados)",
+        "certifications": [
+          "SOC 2 Type II",
+          "GDPR"
+        ],
+        "dpa": true,
+        "zeroRetention": "configurável",
+        "selfHost": true
+      },
+      "notes": "Forte apelo de compliance/soberania de dados na Europa. Pesos disponíveis.",
+      "source": "Curadoria interna",
+      "lastVerified": "2026-07-22",
+      "openrouterId": "mistralai/mistral-large",
+      "priceSource": "OpenRouter API",
+      "priceVerified": "2026-07-30",
+      "promptFamily": "open"
+    }
+  ],
+  "benchmarkGroups": [
+    {
+      "id": "reasoning",
+      "label": "Raciocínio",
+      "kind": "quality"
+    },
+    {
+      "id": "code",
+      "label": "Código",
+      "kind": "quality"
+    },
+    {
+      "id": "knowledge",
+      "label": "Conhecimento",
+      "kind": "quality"
+    },
+    {
+      "id": "multimodal",
+      "label": "Multimodal / Visão",
+      "kind": "quality"
+    },
+    {
+      "id": "community",
+      "label": "Preferência humana",
+      "kind": "quality"
+    },
+    {
+      "id": "operational",
+      "label": "Métricas operacionais (não são benchmarks de qualidade)",
+      "kind": "operational"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "gpqa",
+      "group": "reasoning",
+      "icon": "🧠",
+      "name": "GPQA",
+      "fullName": "Graduate-Level Google-Proof Q&A",
+      "what": "Questões de nível de pós-graduação em biologia, física e química, escritas por especialistas e desenhadas para serem difíceis de responder só com uma busca no Google.",
+      "measures": "Raciocínio científico profundo e conhecimento especializado — não memorização superficial.",
+      "useWhen": [
+        "Decisões que exigem raciocínio técnico/científico rigoroso",
+        "Agentes que precisam 'pensar' em múltiplos passos antes de responder",
+        "Desempatar modelos de topo pela capacidade bruta de raciocínio"
+      ],
+      "caveat": "Focado em ciências exatas — não reflete raciocínio de negócio, criatividade ou escrita.",
+      "rankBy": "score:reasoning"
+    },
+    {
+      "id": "math",
+      "group": "reasoning",
+      "icon": "∑",
+      "name": "MATH / AIME",
+      "fullName": "Competition Mathematics",
+      "what": "Problemas de matemática de competição (nível olimpíada) que exigem várias etapas encadeadas de dedução até a resposta final.",
+      "measures": "Raciocínio lógico-matemático em múltiplos passos e precisão sob encadeamento longo.",
+      "useWhen": [
+        "Casos com lógica quantitativa, cálculo ou finanças",
+        "Fluxos que encadeiam muitos passos de raciocínio",
+        "Filtrar modelos que erram por 'desatenção' em cadeias longas"
+      ],
+      "caveat": "Pontuar alto em MATH não garante bom desempenho em texto livre ou código.",
+      "rankBy": "score:reasoning"
+    },
+    {
+      "id": "humaneval",
+      "group": "code",
+      "icon": "{ }",
+      "name": "HumanEval",
+      "fullName": "HumanEval / MBPP",
+      "what": "Conjunto de funções Python a implementar a partir de uma docstring; o código gerado é executado contra testes automáticos.",
+      "measures": "Geração de código correto em problemas curtos e autocontidos.",
+      "useWhen": [
+        "Autocomplete e geração de funções/snippets isolados",
+        "Triagem rápida da capacidade básica de código",
+        "Tarefas pequenas e bem definidas"
+      ],
+      "caveat": "São problemas 'de brinquedo', pequenos e isolados — não medem trabalho em bases de código reais. Muitos modelos já saturam (~90%+), reduzindo o poder de diferenciação.",
+      "rankBy": "score:code"
+    },
+    {
+      "id": "swebench",
+      "group": "code",
+      "icon": "⌥",
+      "name": "SWE-bench Verified",
+      "fullName": "SWE-bench Verified",
+      "what": "Issues reais do GitHub que o modelo precisa resolver editando um repositório de verdade; a solução só conta se os testes do próprio projeto passam.",
+      "measures": "Capacidade agêntica de código no mundo real: navegar o repositório, entender o contexto e aplicar um patch que funciona.",
+      "useWhen": [
+        "Escolher modelo para agentes de código / copilotos",
+        "Automação de PRs, correção de bugs e refactors",
+        "É o benchmark mais próximo de engenharia de software real"
+      ],
+      "caveat": "O resultado depende muito do 'scaffold'/agente em volta do modelo, não só do modelo puro.",
+      "rankBy": "score:code"
+    },
+    {
+      "id": "mmlu-pro",
+      "group": "knowledge",
+      "icon": "📚",
+      "name": "MMLU-Pro",
+      "fullName": "Massive Multitask Language Understanding (Pro)",
+      "what": "Milhares de questões de múltipla escolha em 57+ áreas (direito, medicina, história, engenharia…). Versão mais difícil e robusta do MMLU original.",
+      "measures": "Amplitude de conhecimento factual e compreensão geral entre domínios.",
+      "useWhen": [
+        "Chatbots de conhecimento geral e assistentes amplos",
+        "Comparar 'cultura geral' e cobertura entre modelos",
+        "Casos onde a amplitude do conhecimento interno importa"
+      ],
+      "caveat": "Mede conhecimento memorizado. Para RAG, o que mais importa é seguir fielmente o contexto fornecido — não o conhecimento interno do modelo.",
+      "rankBy": "score:knowledge"
+    },
+    {
+      "id": "mmmu",
+      "group": "multimodal",
+      "icon": "🖼️",
+      "name": "MMMU",
+      "fullName": "Massive Multi-discipline Multimodal Understanding",
+      "what": "Questões que combinam imagem + texto (diagramas, gráficos, tabelas, figuras) exigindo interpretação visual junto com raciocínio, em nível universitário.",
+      "measures": "Compreensão multimodal (visão + linguagem) sobre conteúdo real.",
+      "useWhen": [
+        "Análise de documentos com imagens, tabelas e gráficos",
+        "OCR inteligente, leitura de dashboards e diagramas",
+        "Selecionar modelo para casos com input visual"
+      ],
+      "caveat": "Mede compreensão visual, não geração de imagem ou vídeo.",
+      "rankBy": "category:multimodal"
+    },
+    {
+      "id": "arena-elo",
+      "group": "community",
+      "icon": "🏆",
+      "name": "Chatbot Arena (Elo)",
+      "fullName": "LMSYS Chatbot Arena",
+      "what": "Ranking por votos humanos: usuários comparam respostas de dois modelos anônimos e escolhem a melhor. Gera um score Elo, como no xadrez.",
+      "measures": "Preferência humana agregada em conversas reais e abertas.",
+      "useWhen": [
+        "Produtos voltados ao usuário final, onde a 'sensação' de qualidade pesa",
+        "Quando qualidade percebida importa mais que benchmark técnico",
+        "Desempatar modelos com scores técnicos parecidos"
+      ],
+      "caveat": "Reflete preferência de estilo/formatação e tende a favorecer respostas mais longas; não é teste de correção objetiva. Não tem API pública estável (por isso entra curado à mão).",
+      "rankBy": "elo"
+    },
+    {
+      "id": "ttft",
+      "group": "operational",
+      "icon": "⚡",
+      "name": "Latência (TTFT)",
+      "fullName": "Time To First Token",
+      "what": "Tempo até o primeiro token da resposta começar a aparecer.",
+      "measures": "Rapidez de resposta percebida — crítico para experiências interativas.",
+      "useWhen": [
+        "Chat em tempo real e respostas em streaming",
+        "UX interativa onde a espera inicial incomoda"
+      ],
+      "caveat": "Varia por provedor, região e carga do momento — sempre meça no seu próprio ambiente.",
+      "rankBy": "ttft"
+    },
+    {
+      "id": "throughput",
+      "group": "operational",
+      "icon": "🚀",
+      "name": "Throughput",
+      "fullName": "Tokens por segundo",
+      "what": "Velocidade de geração depois que a resposta começa, em tokens/segundo.",
+      "measures": "Quão rápido respostas longas são produzidas.",
+      "useWhen": [
+        "Respostas longas (relatórios, código extenso)",
+        "Alto volume e processamento em lote"
+      ],
+      "caveat": "Um throughput alto não compensa uma latência inicial (TTFT) ruim em chat.",
+      "rankBy": "score:speed"
+    },
+    {
+      "id": "context",
+      "group": "operational",
+      "icon": "📄",
+      "name": "Janela de contexto",
+      "fullName": "Context window",
+      "what": "Máximo de tokens (input + output) que o modelo processa de uma vez.",
+      "measures": "Quanto material o modelo consegue considerar simultaneamente.",
+      "useWhen": [
+        "RAG e análise de documentos longos",
+        "Históricos de conversa extensos",
+        "Agentes com muito contexto acumulado"
+      ],
+      "caveat": "Contexto grande não é o mesmo que boa recuperação no meio do texto ('lost in the middle'). Teste o retrieval real, não confie só no número.",
+      "rankBy": "context"
+    }
+  ],
+  "generalTips": [
+    "Seja explícito sobre formato e restrições de saída — não deixe o modelo adivinhar.",
+    "Dê uma saída de emergência (\"se a resposta não estiver no contexto, diga que não sabe\") para reduzir alucinação.",
+    "Em contexto longo, repita a instrução no início E no fim — o modelo presta mais atenção às pontas.",
+    "Use exemplos (few-shot) quando precisar de consistência de formato.",
+    "Itere medindo: crie um conjunto de avaliação pequeno e compare versões de prompt.",
+    "Controle custo reaproveitando prefixos/system prompts (prompt caching) e escolhendo o menor modelo que resolve."
+  ],
+  "promptingGuides": [
+    {
+      "id": "anthropic",
+      "family": "anthropic",
+      "title": "Claude (Anthropic)",
+      "icon": "◆",
+      "principles": [
+        "Estruture o prompt com tags XML (<contexto>, <instrucoes>, <exemplo>) — Claude segue muito bem essa marcação.",
+        "Coloque documentos longos ANTES da pergunta; a instrução final logo depois melhora a aderência.",
+        "Use a system prompt para definir papel e regras; seja direto e específico.",
+        "Peça raciocínio dentro de <thinking> quando a tarefa for complexa.",
+        "Você pode \"prefill\" o início da resposta do assistant para forçar o formato (ex.: começar com \"{\")."
+      ],
+      "snippet": "system: Você é um analista jurídico. Responda só com base no contrato.\n\nuser:\n<contrato>\n{DOCUMENTO}\n</contrato>\n\n<instrucoes>\nListe as cláusulas de rescisão em bullets.\nSe não houver, responda \"Nenhuma encontrada\".\n</instrucoes>",
+      "docsUrl": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+    },
+    {
+      "id": "openai",
+      "family": "openai",
+      "title": "GPT (OpenAI)",
+      "icon": "✳",
+      "principles": [
+        "Coloque as regras na mensagem system/developer; seja específico sobre o objetivo.",
+        "Para saída estruturada, use Structured Outputs / JSON Schema ou function calling em vez de pedir \"responda em JSON\".",
+        "Delimite o contexto com marcação clara (```` ``` ````, markdown ou títulos).",
+        "Nos modelos de raciocínio (série o), mantenha o prompt simples — evite \"pense passo a passo\", o raciocínio já é interno.",
+        "Few-shot ajuda formato; poucos exemplos bem escolhidos > muitos genéricos."
+      ],
+      "snippet": "system: Extraia dados de nota fiscal. Responda SOMENTE no schema.\n\n// response_format: json_schema\n{\n  \"fornecedor\": \"string\",\n  \"valor_total\": \"number\",\n  \"itens\": [{ \"descricao\": \"string\", \"qtd\": \"number\" }]\n}\n\nuser: <<texto da nota fiscal>>",
+      "docsUrl": "https://platform.openai.com/docs/guides/prompt-engineering"
+    },
+    {
+      "id": "google",
+      "family": "google",
+      "title": "Gemini (Google)",
+      "icon": "◈",
+      "principles": [
+        "Aproveite o contexto gigante (1M tokens): coloque todos os documentos relevantes de uma vez.",
+        "Use o campo de system instructions para papel e regras persistentes.",
+        "Para multimodal, referencie as imagens/arquivos junto do texto na mesma requisição.",
+        "Use response schema (controlled generation) para forçar JSON válido.",
+        "Instruções no início ajudam; para tarefas longas, reforce o formato esperado ao final."
+      ],
+      "snippet": "systemInstruction: Você resume laudos médicos para leigos.\n\ncontents:\n- (arquivo) laudo.pdf\n- text: \"Resuma em 3 bullets, linguagem simples, sem jargão.\n         Marque com ⚠️ qualquer achado que peça atenção médica.\"\n\n// responseMimeType: application/json (opcional)",
+      "docsUrl": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+    },
+    {
+      "id": "open",
+      "family": "open",
+      "title": "Modelos abertos (DeepSeek, Llama, Mistral)",
+      "icon": "▲",
+      "principles": [
+        "Respeite o chat template do modelo (tokens especiais de turno) — usar o template errado degrada muito a qualidade.",
+        "Modelos menores precisam de instruções mais curtas, explícitas e um objetivo por vez.",
+        "Em modelos de raciocínio (ex.: DeepSeek R1), NÃO diga como pensar; deixe-o raciocinar e ajuste a temperatura.",
+        "Few-shot é especialmente eficaz para fixar formato em modelos menores.",
+        "Self-host = você controla tudo: versão, dados e retenção. Fixe a versão do modelo em produção."
+      ],
+      "snippet": "<|system|>\nVocê é um classificador de tickets de suporte.\nCategorias: FATURAMENTO, TECNICO, CANCELAMENTO, OUTRO.\n<|user|>\nExemplo: \"Fui cobrado duas vezes\" -> FATURAMENTO\nExemplo: \"App trava ao abrir\"   -> TECNICO\n\nTicket: \"Quero encerrar minha conta\"\nResponda só a categoria.",
+      "docsUrl": "https://huggingface.co/docs/transformers/main/en/chat_templating"
+    }
+  ]
+}
