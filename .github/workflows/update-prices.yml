@@ -1,0 +1,72 @@
+name: Atualiza preços (OpenRouter)
+
+# Regenera price/context em models-data.json a partir da OpenRouter API
+# e commita SOMENTE se houver mudança. Fonte pública, sem secret.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # toda segunda-feira, 06:00 UTC
+  workflow_dispatch:        # permite rodar manualmente pela aba Actions
+
+# Duas execuções simultâneas commitariam em cima uma da outra.
+concurrency:
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Atualiza preços
+        run: node scripts/update-prices.mjs
+
+      # Rede instável ou mudança de schema na OpenRouter podem gerar um
+      # JSON quebrado. Commitar isso derruba a SPA inteira, que faz
+      # fetch deste arquivo — então validamos antes.
+      - name: Valida models-data.json
+        run: |
+          node -e "
+            const d = require('./models-data.json');
+            if (!Array.isArray(d.models) || d.models.length === 0)
+              throw new Error('models vazio ou ausente');
+            const semPreco = d.models.filter(
+              (m) => !m.price || typeof m.price.input !== 'number'
+            );
+            if (semPreco.length)
+              throw new Error('sem preço: ' + semPreco.map((m) => m.id).join(', '));
+            console.log(d.models.length + ' modelos validados.');
+          "
+
+      - name: Commita se mudou
+        run: |
+          if [[ -z "$(git status --porcelain models-data.json)" ]]; then
+            echo "Sem mudanças de preço — nada a commitar." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          # || true: o step roda com pipefail, e o head fechando o pipe
+          # cedo faria o git sair com SIGPIPE e derrubaria a execução.
+          {
+            echo "### Preços atualizados"
+            echo '```diff'
+            git --no-pager diff --unified=0 models-data.json \
+              | grep -E '^[+-]' | grep -vE '^[+-]{3}' | head -40 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          git config user.name  "ai-hub-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add models-data.json
+          git commit -m "chore(data): atualiza preços/contexto via OpenRouter [skip ci]"
+          git push
