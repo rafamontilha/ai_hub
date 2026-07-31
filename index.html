@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Hub — Benchmark & Recomendação de LLMs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Aplica o tema salvo antes do paint para evitar flash.
+    (function () {
+      var saved = localStorage.getItem('aihub-theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#catalog">
+        <span class="logo">AI</span>
+        <span>Model Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="#catalog">Catálogo</a>
+        <a href="#matcher">Smart Matcher</a>
+        <a href="#compare">Comparador</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="#governance">Governança</a>
+        <a href="#guidelines">Guidelines</a>
+        <a href="#calculator">Calculadora</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" title="Alternar tema claro/escuro" aria-label="Alternar tema">🌙</button>
+    </div>
+  </nav>
+
+  <main id="views">
+
+  <!-- CATALOG (home) -->
+  <section class="view" id="catalog">
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow">Benchmark & Recommendation</span>
+      <h1>Escolha o <span class="grad">LLM certo</span><br />para cada projeto.</h1>
+      <p>Catálogo comparativo de modelos com preços, contexto, benchmarks e governança — para os times de engenharia e produto decidirem com dados, não com achismo.</p>
+
+      <div class="hero-stats">
+        <div class="stat"><b id="stat-models">—</b><span>modelos catalogados</span></div>
+        <div class="stat"><b id="stat-providers">—</b><span>provedores</span></div>
+        <div class="stat"><b id="stat-updated">—</b><span>última atualização</span></div>
+      </div>
+
+      <div class="search-wrap">
+        <input id="search" type="text" placeholder="Busque por caso de uso, modelo ou provedor…" autocomplete="off" />
+      </div>
+    </div>
+  </header>
+
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Model Catalog</span>
+        <h2>Catálogo de modelos</h2>
+        <p>Filtre por categoria e adicione modelos ao comparador. Cada card mostra a data de verificação do dado — clique em "Métricas" para ver scores e governança.</p>
+      </div>
+      <div class="pills" id="pills"></div>
+      <div class="grid" id="cards"></div>
+    </div>
+  </section>
+
+  <!-- SMART MATCHER (WIZARD) -->
+  <section class="view" id="matcher">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Smart Model Matcher</span>
+        <h2>Qual modelo escolher para o seu projeto?</h2>
+        <p>Responda 3 perguntas e receba uma shortlist rankeada — modelo principal + alternativa econômica, com o porquê.</p>
+      </div>
+      <div class="wizard" id="wizard"></div>
+    </div>
+  </section>
+
+  <!-- COMPARATOR -->
+  <section class="view" id="compare">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Side-by-Side Comparator</span>
+        <h2>Comparador técnico</h2>
+        <p>Selecione de 2 a 3 modelos no catálogo. O radar cruza raciocínio, código, conhecimento, velocidade e custo.</p>
+      </div>
+      <div id="compare-content"></div>
+    </div>
+  </section>
+
+  <!-- BENCHMARKS -->
+  <section class="view" id="benchmarks">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Benchmark Guide</span>
+        <h2>Guia de benchmarks</h2>
+        <p>O que cada benchmark realmente mede, quando usá-lo como referência de decisão — e onde ele engana. É daqui que saem os eixos do comparador.</p>
+      </div>
+      <div class="pills" id="bench-pills"></div>
+      <div id="bench-content"></div>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE -->
+  <section class="view" id="governance">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Governança & Compliance</span>
+        <h2>Matriz de compliance</h2>
+        <p>Para muitos times, "esse modelo pode processar esse dado?" pesa mais que o ELO. Filtre por requisito e compare hospedagem, retenção, residência e certificações.</p>
+      </div>
+      <div class="pills" id="gov-pills"></div>
+      <div id="gov-content"></div>
+    </div>
+  </section>
+
+  <!-- GUIDELINES -->
+  <section class="view" id="guidelines">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Prompting & Guidelines</span>
+        <h2>Boas práticas de prompting</h2>
+        <p>Cada família de modelo tem idiomas próprios. Comece pelas dicas gerais e veja o guia + snippet da família que você vai usar.</p>
+      </div>
+      <div id="general-tips"></div>
+      <div class="guide-grid" id="guide-content"></div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="view" id="calculator">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Cost & Volume Calculator</span>
+        <h2>Calculadora de custo mensal</h2>
+        <p>Estime o gasto por modelo com base no seu volume. Ordenado do mais barato ao mais caro.</p>
+      </div>
+      <div class="calc-grid">
+        <div class="calc-panel">
+          <div class="field">
+            <label for="calc-req">Requisições / mês</label>
+            <input id="calc-req" type="number" value="50000" min="0" />
+          </div>
+          <div class="field">
+            <label for="calc-in">Tokens de input / requisição</label>
+            <input id="calc-in" type="number" value="1500" min="0" />
+          </div>
+          <div class="field">
+            <label for="calc-out">Tokens de output / requisição</label>
+            <input id="calc-out" type="number" value="500" min="0" />
+            <div class="hint">Custo = (req × tokens ÷ 1M) × preço por 1M tokens.</div>
+          </div>
+        </div>
+        <div class="calc-panel">
+          <div class="calc-bars" id="calc-bars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="disclaimer" id="disclaimer">
+        <span>⚠️</span>
+        <span id="disclaimer-text"></span>
+      </div>
+      <div class="foot-note">AI Hub · protótipo · SPA estática, sem backend.</div>
+    </div>
+  </footer>
+
+  <!-- Compare tray -->
+  <div class="compare-tray hidden" id="tray">
+    <span style="font-size:.82rem;color:var(--text-2)">Comparar:</span>
+    <div class="tray-chips" id="tray-chips"></div>
+    <button class="btn primary tiny" id="tray-go">Ver comparação →</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-back" id="modal-back">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
