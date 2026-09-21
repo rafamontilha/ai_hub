@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-14",
+    "generatedAt": "2026-09-21",
     "disclaimer": "Preço e contexto são AUTOMATIZADOS via OpenRouter API (ver priceSource/priceVerified). Scores/ELO são CURADOS e ilustrativos no protótipo (ver source/lastVerified) — verifique antes de usar em decisão real. Scores normalizados 0-100.",
     "scoreAxes": [
       "reasoning",
@@ -11,7 +11,7 @@
       "cost"
     ],
     "sources": {
-      "pricing": "OpenRouter API (auto, 2026-09-14)",
+      "pricing": "OpenRouter API (auto, 2026-09-21)",
       "quality": "Curadoria interna (Artificial Analysis / papers / cards oficiais)",
       "elo": "LMSYS Chatbot Arena (curado manualmente)"
     }
@@ -95,7 +95,7 @@
       "lastVerified": "2026-07-28",
       "openrouterId": "anthropic/claude-opus-4.8",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "anthropic"
     },
     {
@@ -147,7 +147,7 @@
       "lastVerified": "2026-07-28",
       "openrouterId": "anthropic/claude-sonnet-4.6",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "anthropic"
     },
     {
@@ -197,7 +197,7 @@
       "lastVerified": "2026-07-28",
       "openrouterId": "anthropic/claude-haiku-4.5",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "anthropic"
     },
     {
@@ -249,7 +249,7 @@
       "lastVerified": "2026-07-25",
       "openrouterId": "openai/gpt-5.1",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "openai"
     },
     {
@@ -301,7 +301,7 @@
       "lastVerified": "2026-07-25",
       "openrouterId": "openai/gpt-5-mini",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "openai"
     },
     {
@@ -352,7 +352,7 @@
       "lastVerified": "2026-07-26",
       "openrouterId": "google/gemini-2.5-pro",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "google"
     },
     {
@@ -402,7 +402,7 @@
       "lastVerified": "2026-07-26",
       "openrouterId": "google/gemini-2.5-flash",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "google"
     },
     {
@@ -449,7 +449,7 @@
       "lastVerified": "2026-07-20",
       "openrouterId": "deepseek/deepseek-r1",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "open"
     },
     {
@@ -497,7 +497,7 @@
       "lastVerified": "2026-07-20",
       "openrouterId": "deepseek/deepseek-chat-v3-0324",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "open"
     },
     {
@@ -517,7 +517,7 @@
       "context": 1048576,
       "price": {
         "input": 0.2,
-        "output": 0.696
+        "output": 0.8
       },
       "latencyTtftMs": 400,
       "throughputTps": 120,
@@ -546,7 +546,7 @@
       "lastVerified": "2026-07-18",
       "openrouterId": "meta-llama/llama-4-maverick",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "open"
     },
     {
@@ -593,7 +593,7 @@
       "lastVerified": "2026-07-18",
       "openrouterId": "meta-llama/llama-4-scout",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "open"
     },
     {
@@ -642,7 +642,7 @@
       "lastVerified": "2026-07-22",
       "openrouterId": "mistralai/mistral-large",
       "priceSource": "OpenRouter API",
-      "priceVerified": "2026-09-14",
+      "priceVerified": "2026-09-21",
       "promptFamily": "open"
     }
   ],
